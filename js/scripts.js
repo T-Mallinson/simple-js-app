@@ -6,3 +6,7 @@ let pokemonList=[
     {name: 'pikachu', types: ['electric'], height: 40},
     {name: 'weedle', types: ['bug', 'poison'], height: 30},
 ]
+
+for (let i=0; i < pokemonList.length; i++) {
+    document.write(pokemonList[i].name + "" + pokemonList[i].height)
+}
