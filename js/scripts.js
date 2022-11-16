@@ -7,6 +7,14 @@ let pokemonList=[
     {name: 'weedle', types: ['bug', 'poison'], height: 30},
 ]
 
-for (let i=0; i < pokemonList.length; i++) {
-    document.write(pokemonList[i].name + "" + pokemonList[i].height)
+for (let i=0; i< pokemonList.length; i++) {
+    if (pokemonList[i].height < 40) {
+        document.write(pokemonList[i].name + " (height:", + pokemonList[i].height + "), " + " - ...pretty small  ")
+    }
+    else if (pokemonList[i].height > 50) {
+        document.write(pokemonList[i].name + " (height:", + pokemonList[i].height + "), " + " - wow...  ")
+    }
+    else {
+        document.write(pokemonList[i].name + " (height:", + pokemonList[i].height + "), " + " - meh average  ")
+    }
 }
