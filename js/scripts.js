@@ -9,12 +9,12 @@ let pokemonList=[
 
 for (let i=0; i< pokemonList.length; i++) {
     if (pokemonList[i].height < 40) {
-        document.write(pokemonList[i].name + " (height:", + pokemonList[i].height + "), " + " - ...pretty small  ")
+        document.write(pokemonList[i].name + " (height:  ", + pokemonList[i].height + ") " + " - ...pretty small ;  ")
     }
     else if (pokemonList[i].height > 50) {
-        document.write(pokemonList[i].name + " (height:", + pokemonList[i].height + "), " + " - wow...  ")
+        document.write(pokemonList[i].name + " (height:  ", + pokemonList[i].height + ") " + " - wow... ;      " )
     }
     else {
-        document.write(pokemonList[i].name + " (height:", + pokemonList[i].height + "), " + " - meh average  ")
+        document.write(pokemonList[i].name + " (height:  ", + pokemonList[i].height + ") " + " - meh average ;     ")
     }
 }
