@@ -56,7 +56,7 @@ let pokemonList = pokemonRepository.getAll();
 pokemonList.forEach(printDetails);
 
 function printDetails (pokemon) {
-    if (pokemonList.height < 40) {
+    if (pokemon.height < 40) {
         document.write("<p>" + pokemon.name + " (height:  ", + pokemon.height + ") " + " - ...pretty small ;" + "</p>")
     }
     else if (pokemon.height > 50) {
@@ -83,6 +83,6 @@ function printArrayDetails(list){
     for (let i=0; i < list.length; i++){
         document.write("<p>" + list[i].name + "</p>");
     };
-}; */
+}; 
 
-printArrayDetails(pokemonList);
+printArrayDetails(pokemonList); */
