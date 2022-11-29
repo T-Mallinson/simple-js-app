@@ -9,9 +9,20 @@ let pokemonRepository = (function () {
         pokemonList.push(pokemon);
     }
 
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listPokemon = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('button-class');
+        listPokemon.appendChild(button);
+        pokemonList.appendChild(listPokemon);
+    }
+
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem,
     };
 
 })()
@@ -51,20 +62,27 @@ pokemonRepository.add (
         height: 30
         });
 
-let pokemonList = pokemonRepository.getAll();
+pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon)
+});
 
-pokemonList.forEach(printDetails);
+// function printDetails (pokemon) {
 
-function printDetails (pokemon) {
-    if (pokemon.height < 40) {
-        document.write("<p>" + pokemon.name + " (height:  ", + pokemon.height + ") " + " - ...pretty small ;" + "</p>")
-    }
-    else if (pokemon.height > 50) {
-        document.write("<p>" + pokemon.name + " (height:  ", + pokemon.height + ") " + " - wow... ;" + "</p>")
-    }
-    else {
-        document.write("<p>" + pokemon.name + " (height:  ", + pokemon.height + ") " + " - meh average ;" + "</p>")
-    }};
+// // let pokemonList = pokemonRepository.getAll();
+
+// // pokemonList.forEach(printDetails);
+// }
+
+// function printDetails (pokemon) {
+//     if (pokemonList.height < 40) {
+//         document.write("<p>" + pokemon.name + " (height:  ", + pokemon.height + ") " + " - ...pretty small ;" + "</p>")
+//     }
+//     else if (pokemon.height > 50) {
+//         document.write("<p>" + pokemon.name + " (height:  ", + pokemon.height + ") " + " - wow... ;" + "</p>")
+//     }
+//     else {
+//         document.write("<p>" + pokemon.name + " (height:  ", + pokemon.height + ") " + " - meh average ;" + "</p>")
+//     }};
 
 
 /* for (let i=0; i< pokemonList.length; i++) {
