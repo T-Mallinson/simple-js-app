@@ -85,13 +85,24 @@ function showModal(pokemon) {
     let pokemonHeight = document.createElement('p');
     pokemonHeight.innerText = "Height: " + pokemon.height;
 
+    
     let pokemonTypes = document.createElement('p');
-    pokemonTypes.innerText = "Types: " + pokemon.types;
+    let types = '';
+    pokemon.types.forEach((pokemonTypes) => {
+        types = types + pokemonTypes.types.name + '';
+    })
+
+
+
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.addEventListener('click', hideModal);
 
     modal.appendChild(title);
     modal.appendChild(pokemonImage);
     modal.appendChild(pokemonHeight);
     modal.appendChild(pokemonTypes);
+    modal.appendChild(closeButtonElement);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
