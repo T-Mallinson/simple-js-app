@@ -85,12 +85,10 @@ function showModal(pokemon) {
     let pokemonHeight = document.createElement('p');
     pokemonHeight.innerText = "Height: " + pokemon.height;
 
+    let types = '';
     
     let pokemonTypes = document.createElement('p');
-    let types = '';
-    pokemon.types.forEach((pokemonTypes) => {
-        types = types + pokemonTypes.types.name + '';
-    })
+    pokemonTypes.innerText = "Types: " + JSON.stringify(pokemon.types);
 
 
 
@@ -113,6 +111,8 @@ function hideModal() {
     let modalContainer = document.querySelector('.modal-container');
     modalContainer.classList.remove('is-visible');
 }
+
+
 
 window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('.modal-container');
