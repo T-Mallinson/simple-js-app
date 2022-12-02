@@ -85,10 +85,11 @@ function showModal(pokemon) {
     let pokemonHeight = document.createElement('p');
     pokemonHeight.innerText = "Height: " + pokemon.height;
 
-    let types = '';
-    
+    let types = pokemon.types.reduce((accum, current) => accum + ' ' + current.type.name, '');
+
     let pokemonTypes = document.createElement('p');
-    pokemonTypes.innerText = "Types: " + JSON.stringify(pokemon.types);
+    
+    pokemonTypes.innerText = "Types: " + types;
 
 
 
