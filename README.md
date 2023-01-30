@@ -1,11 +1,17 @@
-Project Description:
-    To build a Pokédex, listing Pokémon and information about them. This is a small web application built with HTML, CSS and JavaScript that loads Pokémon's data from an external API. The Pokédex will display a list of items loaded from the Pokémon API.
+This app shows a list of all pokemons loaded from the RESTful Pokémon API.
 
-How to get project running:
+If you click on a pokemons name a modal with the pokemons picture and details will open.
 
+You can also search for a pokemnon by its name.
 
-Project dependencies:
+This app was developed to learn the basics of JavaScript.
 
-
-Which API project uses:
-    Pokemon API
+Used technologies
+HTML
+CSS
+JavaScript
+Ajax
+jQuery
+Bootstrap
+Link to the live version
+The online hosted version of this app can be found here: Pokedex App.
