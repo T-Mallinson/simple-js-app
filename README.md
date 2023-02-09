@@ -12,3 +12,4 @@ Tools Used:
     * JS Linter
     * Promise Polyfill
     * Fetch Polyfill
+    * JS & CSS minimisers
