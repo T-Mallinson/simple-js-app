@@ -2,10 +2,18 @@ let pokemonRepository = (function () {
 
     let pokemonList=[];
 
-    let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=250';
 
     let pokemonListElement = $('.pokemon-list');
 
+    let searchButton = $(".btn-outline-success");
+    searchButton.on("click", function () {
+        let uPokemonList = $(".pokemon-list");
+        uPokemonList.empty();
+        getByName($(".form-control").val()).forEach(function(pokemon) {
+            addListItem(pokemon);
+        });
+    })
 
     function getAll () {
         return pokemonList;
@@ -20,9 +28,17 @@ let pokemonRepository = (function () {
         }
     }
 
+    function getByName(search) {
+        return pokemonList.filter(function(pokemon) {
+            return pokemon.name.toLowerCase().includes(search.toLowerCase());
+        });
+    }
+
     function addListItem(pokemon) {
+        let uPokemonList = $(".pokemon-list");
         let listItem = $('<li class="list-group-item"></li>');
         let button = $('<button class="pokemon-button btn btn-warning" data-bs-target="#pokemon-modal" data-bs-toggle="modal">' + pokemon.name + '</button>');
+        
         listItem.append(button);
         pokemonListElement.append(listItem);
         button.on('click', function(){
@@ -56,7 +72,7 @@ let pokemonRepository = (function () {
           item.imageUrl = details.sprites.front_default;
           item.height = details.height;
           item.types = details.types.map((type) => type.type.name);
-          item.abilities = details.abilities.map((abilities) => abilities.abilities.name);
+          item.weight = details.weight;
         }).catch(function (e) {
           console.error(e);
         });
@@ -77,12 +93,12 @@ let pokemonRepository = (function () {
         let height = $('<p>' + 'Height: ' + pokemon.height + '</p>');
         let image = $('<img class="pokemon-img" src="' + pokemon.imageUrl + '" />');
         let types = $('<p>' + 'Types: ' + pokemon.types + '</p>');
-        let abilities = $('<p>' + 'Abilities: ' + pokemon.abilities + '</p>');
+
         
         modalBody.append(image);
         modalBody.append(height);
         modalBody.append(types);
-        modalBody.append(abilities);
+        modalBody.append(weight);
     }
 
     return {
