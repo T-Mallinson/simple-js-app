@@ -7,6 +7,10 @@ Project Description:
     * The Pokémon information will be shown upon clicking on the names in a modal displaying the name, image, height, types and weight.
 
 Tools Used:
+    * HTML
+    * CSS
+    * JavaScript
+    * Ajax
     * JQuery
     * Bootstrap
     * JS Linter
