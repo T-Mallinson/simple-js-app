@@ -1,4 +1,3 @@
-Pokédex App
 
 Link to GH Pages webpage: https://t-mallinson.github.io/simple-js-app/
 
